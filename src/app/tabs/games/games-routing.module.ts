@@ -22,6 +22,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'tictactoe',
+    loadChildren: () =>
+      import('../../games/tictactoe/tictactoe.module').then(
+        (m) => m.TicTacToePageModule
+      ),
+  },
+  {
     path: 'words',
     loadChildren: () =>
       import('../../games/words/words.module').then((m) => m.WordsPageModule),

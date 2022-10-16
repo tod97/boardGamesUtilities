@@ -26,6 +26,24 @@ export class GamesPage {
       link: 'words',
     },
     {
+      name: 'Tic Tac Toe',
+      icon: 'apps-outline',
+      color: 'alert',
+      link: 'tictactoe',
+    },
+    /* {
+      name: 'Word shuffle',
+      icon: 'globe-outline',
+      color: 'primary',
+      link: 'words',
+    },
+    {
+      name: 'Word shuffle',
+      icon: 'globe-outline',
+      color: 'primary',
+      link: 'words',
+    }, */
+    {
       name: 'More coming...',
       icon: 'code-working-outline',
     },
