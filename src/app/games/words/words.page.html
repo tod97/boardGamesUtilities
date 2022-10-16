@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBackButtonClick()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Words</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="w-full h-full flex flex-col flex-wrap">
+    <div class="h-3/4 flex justify-center items-center">
+      <span class="text-6xl lowercase">{{word}}</span>
+    </div>
+    <div>
+      <ion-button expand="block" size="large" (click)="onChangeWord()">Change</ion-button>
+      <ion-list>
+        <ion-item>
+          <ion-label>Language</ion-label>
+          <ion-select [(ngModel)]="lang" (ionChange)="onChangeWord()">
+            <ion-select-option *ngFor="let l of langs" [value]="l" class="uppercase">{{l}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
