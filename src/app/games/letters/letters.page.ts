@@ -12,9 +12,7 @@ export class LettersPage implements OnInit {
 
   constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {}
-
-  ionViewWillEnter() {
+  ngOnInit() {
     this.onChangeLetter();
   }
 

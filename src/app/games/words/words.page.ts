@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-words',
@@ -12,24 +13,23 @@ export class WordsPage implements OnInit {
   langs = ['it', 'en'];
   dictionaries: { [key: string]: string[] } = {};
 
-  constructor(private navCtrl: NavController) {
-    for (const lang of this.langs) {
-      fetch(`assets/words/${lang}-words.txt`)
-        .then((response) =>
+  constructor(private navCtrl: NavController) {}
+
+  ngOnInit() {
+    forkJoin(
+      this.langs.map((lang) =>
+        fetch(`assets/words/${lang}-words.txt`).then((response) =>
           response.status === 200
             ? response.text()
             : new Promise<string>((resolve) => resolve(''))
         )
-        .then((data) => {
-          this.dictionaries[lang] = data.split('\n');
-        });
-    }
-  }
-
-  ngOnInit() {}
-
-  ionViewWillEnter() {
-    this.onChangeWord();
+      )
+    ).subscribe((res: string[]) => {
+      for (const lang of this.langs) {
+        this.dictionaries[lang] = res[this.langs.indexOf(lang)].split('\n');
+      }
+      this.onChangeWord();
+    });
   }
 
   onBackButtonClick() {

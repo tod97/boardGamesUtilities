@@ -8,13 +8,19 @@ import { Component } from '@angular/core';
 export class GamesPage {
   games = [
     {
-      name: 'Letter generator',
-      icon: 'shuffle-outline',
+      name: 'Roll a die',
+      icon: 'dice-outline',
+      color: 'success',
+      link: 'dice',
+    },
+    {
+      name: 'Letter shuffle',
+      icon: 'text-outline',
       color: 'danger',
       link: 'letters',
     },
     {
-      name: 'Word generator',
+      name: 'Word shuffle',
       icon: 'globe-outline',
       color: 'primary',
       link: 'words',

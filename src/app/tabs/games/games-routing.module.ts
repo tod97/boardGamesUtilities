@@ -10,6 +10,11 @@ const routes: Routes = [
     component: GamesPage,
   },
   {
+    path: 'dice',
+    loadChildren: () =>
+      import('../../games/dice/dice.module').then((m) => m.DicePageModule),
+  },
+  {
     path: 'letters',
     loadChildren: () =>
       import('../../games/letters/letters.module').then(
