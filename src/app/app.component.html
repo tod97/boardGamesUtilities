@@ -1,3 +1,31 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-router-outlet [hidden]="remainingTime === 0"></ion-router-outlet>
+  <div class="w-full h-full flex justify-center flex-col items-center" [hidden]="remainingTime !== 0">
+    <p class="text-6xl mb-20">Timer</p>
+    <ion-button color="warning" shape="round" size="large" (click)="stopTimer()">Interrompi</ion-button>
+  </div>
+
+  <ion-fab [hidden]="remainingTime === 0" class="font-bold" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="light" class="dark-activated">
+      <ion-icon *ngIf="!endTime" name="timer" color="warning"></ion-icon>
+      <span class="text-2xl" *ngIf="endTime">{{remainingTime}}</span>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button *ngIf="endTime" (click)="stopTimer()">
+        <ion-icon name="stop" color="danger"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="start">
+      <ion-fab-button (click)="startTimer(6)">
+        1m
+      </ion-fab-button>
+      <ion-fab-button (click)="startTimer(90)">
+        1,5m
+      </ion-fab-button>
+      <ion-fab-button (click)="startTimer(120)">
+        2m
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-app>
