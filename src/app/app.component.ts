@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonService } from './services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent {
   remainingTime: number;
   interval: any;
 
-  constructor() {}
+  constructor(public commonService: CommonService) {}
 
   startTimer(seconds) {
     this.endTime = new Date();

@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content forceOverscroll="false">
   <div class="w-full h-full flex flex-col flex-wrap">
     <div class="h-3/4 flex justify-center items-center">
       <span class="text-9xl">{{letter}}</span>
@@ -18,7 +18,7 @@
       <ion-button expand="block" size="large" (click)="onChangeLetter()">Change</ion-button>
       <ion-list>
         <ion-item>
-          <ion-label>Avoid unusual letters</ion-label>
+          <ion-label>Avoid unusual letters (JKWXY)</ion-label>
           <ion-toggle slot="end" [(ngModel)]="avoidUnusualLetters"></ion-toggle>
         </ion-item>
       </ion-list>

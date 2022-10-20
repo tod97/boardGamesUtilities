@@ -22,7 +22,7 @@ export class LettersPage implements OnInit {
 
   onChangeLetter() {
     const letters = this.avoidUnusualLetters
-      ? 'ABCDEFGHILMNOPQRSTUV'
+      ? 'ABCDEFGHILMNOPQRSTUVZ'
       : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     this.letter = letters[Math.floor(Math.random() * letters.length)];
   }
