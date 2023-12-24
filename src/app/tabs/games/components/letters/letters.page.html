@@ -5,7 +5,7 @@
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Letters</ion-title>
+    <ion-title>{{ "GAMES.LETTER_SHUFFLE" | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,10 +15,12 @@
       <span class="text-9xl">{{letter}}</span>
     </div>
     <div>
-      <ion-button expand="block" size="large" (click)="onChangeLetter()">Change</ion-button>
+      <ion-button expand="block" size="large" (click)="onChangeLetter()">
+        {{ "COMMON.NEW" | translate}}
+      </ion-button>
       <ion-list>
         <ion-item>
-          <ion-label>Avoid unusual letters (JKWXY)</ion-label>
+          <ion-label>{{ "COMMON.AVOID_UNUSUAL_LETTERS" | translate}}</ion-label>
           <ion-toggle slot="end" [(ngModel)]="avoidUnusualLetters"></ion-toggle>
         </ion-item>
       </ion-list>

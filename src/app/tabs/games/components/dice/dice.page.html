@@ -5,7 +5,7 @@
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Dice</ion-title>
+    <ion-title>{{ "GAMES.ROLL_DICE" | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,10 +15,12 @@
       <span class="text-9xl">{{num}}</span>
     </div>
     <div>
-      <ion-button expand="block" size="large" (click)="onChangeNumber()">Change</ion-button>
+      <ion-button expand="block" size="large" (click)="onChangeNumber()">
+        {{ "COMMON.THROW" | translate}}
+      </ion-button>
       <ion-list>
         <ion-item>
-          <ion-label>Faces</ion-label>
+          <ion-label>{{ "COMMON.FACES" | translate}}</ion-label>
           <ion-input class="ion-text-right" type="number" placeholder="6" min="2" [(ngModel)]="faces"></ion-input>
         </ion-item>
       </ion-list>

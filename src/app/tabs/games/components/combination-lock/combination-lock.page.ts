@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
 import { forkJoin } from 'rxjs';
 import { CommonService } from 'src/app/services/common.service';
 
@@ -26,6 +27,7 @@ export class CombinationLockPage implements OnInit, OnDestroy {
   EState = EState;
 
   constructor(
+    private translate: TranslateService,
     private commonService: CommonService,
     private navCtrl: NavController,
     private alertCtrl: AlertController
@@ -98,18 +100,18 @@ export class CombinationLockPage implements OnInit, OnDestroy {
   async onReset() {
     this.stopTimer();
     const alert = await this.alertCtrl.create({
-      header: 'Reset Game',
-      message: 'Are you sure you want to reset the game?',
+      header: this.translate.instant('GAMES.RESET_ALERT.TITLE'),
+      message: this.translate.instant('GAMES.RESET_ALERT.MESSAGE'),
       buttons: [
         {
-          text: 'Cancel',
+          text: this.translate.instant('COMMON.CANCEL'),
           role: 'cancel',
           handler: () => {
             this.resumeGame();
           },
         },
         {
-          text: 'OK',
+          text: this.translate.instant('COMMON.CONFIRM'),
           role: 'confirm',
           handler: () => {
             this.state = EState.INIT;

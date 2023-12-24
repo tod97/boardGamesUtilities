@@ -5,7 +5,7 @@
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Combination Lock</ion-title>
+    <ion-title>{{ "GAMES.COMBINATION_LOCK" | translate}}</ion-title>
     <ion-buttons slot="end">
       <ion-button *ngIf="state !== EState.INIT && state !== EState.END" (click)="onReset()">
         <ion-icon slot="icon-only" name="refresh-outline"></ion-icon>
@@ -20,13 +20,13 @@
     <div *ngIf="state === EState.INIT">
       <ion-list class="h-full">
         <ion-item>
-          <ion-label>Language</ion-label>
+          <ion-label>{{ "COMMON.LANGUAGE" | translate}}</ion-label>
           <ion-select [(ngModel)]="lang">
             <ion-select-option *ngFor="let l of langs" [value]="l" class="uppercase">{{l}}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-label>Time</ion-label>
+          <ion-label>{{ "COMMON.TIME" | translate}}</ion-label>
           <ion-select [(ngModel)]="time">
             <ion-select-option *ngFor="let t of times" [value]="t">{{t}} s</ion-select-option>
           </ion-select>
@@ -34,7 +34,8 @@
       </ion-list>
 
       <ion-button expand="block" size="large" (click)="onStart()">
-        <ion-icon class="mr-3" slot="icon-only" name="play-outline"></ion-icon>Start
+        <ion-icon class="mr-3" slot="icon-only" name="play-outline"></ion-icon>
+        {{ "COMMON.START" | translate}}
       </ion-button>
     </div>
 
@@ -65,16 +66,19 @@
         <ng-container *ngIf="state === EState.PLAYING">
           <ion-button *ngIf="remainingSkips > 0" class="h-full" color="warning" expand="block" size="large"
             (click)="onSkip()">
-            <ion-icon class="mr-3" slot="icon-only" name="play-forward-outline"></ion-icon>Skip
+            <ion-icon class="mr-3" slot="icon-only" name="play-forward-outline"></ion-icon>
+            {{ "COMMON.SKIP" | translate}}
           </ion-button>
           <ion-button class="h-full" expand="block" size="large" (click)="onStop()">
-            <ion-icon class="mr-3" slot="icon-only" name="stop-outline"></ion-icon>Stop
+            <ion-icon class="mr-3" slot="icon-only" name="stop-outline"></ion-icon>
+            {{ "COMMON.STOP" | translate}}
           </ion-button>
         </ng-container>
 
         <ng-container *ngIf="state === EState.SKIPPED">
           <ion-button class="h-1/2" expand="block" size="large" (click)="onSetPoints(0)">
-            <ion-icon class="mr-3" slot="icon-only" name="play-outline"></ion-icon>Resume
+            <ion-icon class="mr-3" slot="icon-only" name="play-outline"></ion-icon>
+            {{ "COMMON.RESUME" | translate}}
           </ion-button>
         </ng-container>
 
@@ -111,7 +115,8 @@
 
       <div class="h-1/4 flex flex-col justify-end">
         <ion-button class="h-1/2" expand="block" size="large" (click)="onStart()">
-          <ion-icon class="mr-3" slot="icon-only" name="refresh-outline"></ion-icon>New game
+          <ion-icon class="mr-3" slot="icon-only" name="refresh-outline"></ion-icon>
+          {{ "GAMES.NEW_GAME" | translate}}
         </ion-button>
       </div>
     </div>

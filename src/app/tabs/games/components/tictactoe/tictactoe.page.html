@@ -5,7 +5,7 @@
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Tic-Tac-Toe</ion-title>
+    <ion-title>{{ "GAMES.TIC_TAC_TOE" | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -22,11 +22,14 @@
     <div *ngIf="winner">
       <p class="w-full text-center text-2xl font-bold my-3">
         <span *ngIf="winner === 'x' || winner === 'o'">
-          🎉 <span *ngIf="winner === 'x'">X</span><span *ngIf="winner === 'o'">O</span> WINS 🎉
+          🎉 <span *ngIf="winner === 'x'">X</span><span *ngIf="winner === 'o'">O</span> {{ "COMMON.WINS" | translate}}
+          🎉
         </span>
         <span *ngIf="winner === 'd'">DRAW</span>
       </p>
-      <ion-button expand="block" size="large" (click)="onNewGame()">New game</ion-button>
+      <ion-button expand="block" size="large" (click)="onNewGame()">
+        {{ "GAMES.NEW_GAME" | translate}}
+      </ion-button>
     </div>
   </div>
 </ion-content>

@@ -1,3 +1,42 @@
 {
-  "HELLO": "Hello"
+  "COMMON": {
+    "AVOID_UNUSUAL_LETTERS": "Avoid unusual letters (JKWXY)",
+    "CANCEL": "Cancel",
+    "CONFIRM": "Confirm",
+    "FACES": "Faces",
+    "LANGUAGE": "Language",
+    "NEW": "New",
+    "RESUME": "Resume",
+    "SKIP": "Skip",
+    "START": "Start",
+    "STOP": "Stop",
+    "THROW": "Throw",
+    "TIME": "Time",
+    "WINS": "Wins"
+  },
+  "GAMES": {
+    "COMBINATION_LOCK": "Combination lock",
+    "LETTER_SHUFFLE": "Letter shuffle",
+    "MORE_COMING_SOON": "More coming soon...",
+    "NEW_GAME": "New game",
+    "RESET_ALERT": {
+      "MESSAGE": "Are you sure you want to reset the game?",
+      "TITLE": "Reset Game"
+    },
+    "ROLL_DICE": "Roll dice",
+    "TIC_TAC_TOE": "Tic tac toe",
+    "WORD_SHUFFLE": "Word shuffle"
+  },
+  "INFO": {
+    "DEVELOPED_BY": "Developed by",
+    "TITLE": "Info"
+  },
+  "TABS": {
+    "GAMES": "Games",
+    "INFO": "Info"
+  },
+  "TIMER": {
+    "STOP": "Stop",
+    "TITLE": "Timer"
+  }
 }

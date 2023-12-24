@@ -5,7 +5,7 @@
         <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Words</ion-title>
+    <ion-title>{{ "GAMES.WORD_SHUFFLE" | translate}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,10 +15,12 @@
       <span class="text-6xl lowercase">{{word}}</span>
     </div>
     <div>
-      <ion-button expand="block" size="large" (click)="onChangeWord()">Change</ion-button>
+      <ion-button expand="block" size="large" (click)="onChangeWord()">
+        {{ "COMMON.NEW" | translate}}
+      </ion-button>
       <ion-list>
         <ion-item>
-          <ion-label>Language</ion-label>
+          <ion-label>{{ "COMMON.LANGUAGE" | translate}}</ion-label>
           <ion-select [(ngModel)]="lang" (ionChange)="onChangeWord()">
             <ion-select-option *ngFor="let l of langs" [value]="l" class="uppercase">{{l}}</ion-select-option>
           </ion-select>

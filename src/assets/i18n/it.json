@@ -1,3 +1,42 @@
 {
-  "HELLO": "Ciao"
+  "COMMON": {
+    "AVOID_UNUSUAL_LETTERS": "Evita lettere (JKWXY)",
+    "CANCEL": "Annulla",
+    "CONFIRM": "Conferma",
+    "FACES": "Facce",
+    "LANGUAGE": "Lingua",
+    "NEW": "Nuovo",
+    "RESUME": "Riprendi",
+    "SKIP": "Salta",
+    "START": "Inizia",
+    "STOP": "Stop",
+    "THROW": "Lancia",
+    "TIME": "Tempo",
+    "WINS": "Vince"
+  },
+  "GAMES": {
+    "COMBINATION_LOCK": "Intesa vincente",
+    "LETTER_SHUFFLE": "Generatore di lettere",
+    "MORE_COMING_SOON": "Altri giochi in arrivo!",
+    "NEW_GAME": "Nuovo gioco",
+    "RESET_ALERT": {
+      "MESSAGE": "Sei sicuro di voler ricominciare?",
+      "TITLE": "Reset"
+    },
+    "ROLL_DICE": "Lancia un dado",
+    "TIC_TAC_TOE": "Tris",
+    "WORD_SHUFFLE": "Generatore di parole"
+  },
+  "INFO": {
+    "DEVELOPED_BY": "Sviluppato da",
+    "TITLE": "Informazioni"
+  },
+  "TABS": {
+    "GAMES": "Giochi",
+    "INFO": "Info"
+  },
+  "TIMER": {
+    "STOP": "Interrompi",
+    "TITLE": "Timer"
+  }
 }

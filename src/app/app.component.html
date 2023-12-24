@@ -2,8 +2,10 @@
 
   <ion-router-outlet [hidden]="remainingTime === 0"></ion-router-outlet>
   <div class="w-full h-full flex justify-center flex-col items-center" [hidden]="remainingTime !== 0">
-    <p class="text-6xl mb-20">Timer</p>
-    <ion-button color="warning" shape="round" size="large" (click)="stopTimer()">Interrompi</ion-button>
+    <p class="text-6xl mb-20">{{'TIMER.TITLE' | translate}}</p>
+    <ion-button color="warning" shape="round" size="large" (click)="stopTimer()">
+      {{"TIMER.STOP" | translate}}
+    </ion-button>
   </div>
 
   <ion-fab [hidden]="!showTimer || remainingTime === 0" class="font-bold mb-12"
