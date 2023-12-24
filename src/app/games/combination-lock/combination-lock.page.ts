@@ -17,6 +17,7 @@ export class CombinationLockPage implements OnInit, OnDestroy {
   interval: any;
   points = 0;
   remainingSkips = 3;
+  usedWords: string[] = [];
 
   word: string;
   dictionaries: { [key: string]: string[] } = {};
@@ -60,12 +61,17 @@ export class CombinationLockPage implements OnInit, OnDestroy {
       this.dictionaries[this.lang][
         Math.floor(Math.random() * this.dictionaries[this.lang].length)
       ];
+    if (this.usedWords.includes(this.word)) {
+      this.onChangeWord();
+    }
+    this.usedWords.push(this.word);
   }
 
   onStart() {
     this.points = 0;
     this.remainingSkips = 3;
     this.remainingTime = this.time;
+    this.usedWords = [];
     this.resumeGame();
   }
 
