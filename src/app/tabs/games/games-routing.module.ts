@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GamesPage } from './games.page';
+import { CombinationLockPage } from 'src/app/tabs/games/components/combination-lock/combination-lock.page';
+import { DicePage } from 'src/app/tabs/games/components/dice/dice.page';
+import { LettersPage } from 'src/app/tabs/games/components/letters/letters.page';
+import { TicTacToePage } from 'src/app/tabs/games/components/tictactoe/tictactoe.page';
+import { WordsPage } from 'src/app/tabs/games/components/words/words.page';
 
 const routes: Routes = [
   {
@@ -9,34 +14,23 @@ const routes: Routes = [
   },
   {
     path: 'combination-lock',
-    loadChildren: () =>
-      import('../../games/combination-lock/combination-lock.module').then(
-        (m) => m.CombinationLockPageModule
-      ),
+    component: CombinationLockPage,
   },
   {
     path: 'dice',
-    loadChildren: () =>
-      import('../../games/dice/dice.module').then((m) => m.DicePageModule),
+    component: DicePage,
   },
   {
     path: 'letters',
-    loadChildren: () =>
-      import('../../games/letters/letters.module').then(
-        (m) => m.LettersPageModule
-      ),
+    component: LettersPage,
   },
   {
     path: 'tictactoe',
-    loadChildren: () =>
-      import('../../games/tictactoe/tictactoe.module').then(
-        (m) => m.TicTacToePageModule
-      ),
+    component: TicTacToePage,
   },
   {
     path: 'words',
-    loadChildren: () =>
-      import('../../games/words/words.module').then((m) => m.WordsPageModule),
+    component: WordsPage,
   },
 ];
 

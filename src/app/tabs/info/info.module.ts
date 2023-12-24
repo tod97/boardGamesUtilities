@@ -6,9 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { InfoPage } from './info.page';
 
 import { InfoPageRoutingModule } from './info-routing.module';
+import { SharedModule } from 'src/shared/shared.module';
 
 @NgModule({
-  imports: [IonicModule, CommonModule, FormsModule, InfoPageRoutingModule],
+  imports: [
+    IonicModule,
+    CommonModule,
+    SharedModule,
+    FormsModule,
+    InfoPageRoutingModule,
+  ],
   declarations: [InfoPage],
 })
 export class InfoPageModule {}

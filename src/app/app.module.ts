@@ -16,6 +16,7 @@ import { registerLocaleData } from '@angular/common';
 import localeIt from '@angular/common/locales/it';
 import localeItExtra from '@angular/common/locales/extra/it';
 import { HttpClient } from '@angular/common/http';
+import { CoreModule } from 'src/core/core.module';
 
 // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
 export function HttpLoaderFactory(http: HttpClient) {
@@ -27,6 +28,7 @@ registerLocaleData(localeIt, localeItExtra);
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    CoreModule,
     BrowserModule,
     IonicModule.forRoot({ swipeBackEnabled: false }),
     AppRoutingModule,
