@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="onBackButtonClick()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Combination Lock</ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="state !== EState.INIT && state !== EState.END" (click)="onReset()">
+        <ion-icon slot="icon-only" name="refresh-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content forceOverscroll="false">
+  <div class="w-full h-full overflow-y-hidden">
+
+    <div *ngIf="state === EState.INIT">
+      <ion-list class="h-full">
+        <ion-item>
+          <ion-label>Language</ion-label>
+          <ion-select [(ngModel)]="lang">
+            <ion-select-option *ngFor="let l of langs" [value]="l" class="uppercase">{{l}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Time</ion-label>
+          <ion-select [(ngModel)]="time">
+            <ion-select-option *ngFor="let t of times" [value]="t">{{t}} s</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+      <ion-button expand="block" size="large" (click)="onStart()">
+        <ion-icon class="mr-3" slot="icon-only" name="play-outline"></ion-icon>Start
+      </ion-button>
+    </div>
+
+    <div *ngIf="state !== EState.INIT && state !== EState.END" class="h-full">
+      <div class="h-1/4 flex flex-col justify-evenly items-center text-6xl">
+        <div class="w-full flex justify-between items-center px-12">
+          <div class="flex">
+            <ion-icon class="mr-3" name="bar-chart-outline"></ion-icon>
+            {{points}}
+          </div>
+          <div class="flex">
+            <ion-icon class="mr-3" name="play-forward-outline"></ion-icon>
+            {{remainingSkips}}
+          </div>
+        </div>
+        <div class="flex">
+          <ion-icon class="mr-3" name="timer-outline"></ion-icon>
+          {{remainingTime}} s
+        </div>
+      </div>
+
+      <div class="h-1/2 flex justify-center items-center">
+        <span class="text-6xl lowercase">{{word}}</span>
+      </div>
+
+      <div class="h-1/4 flex flex-col justify-end">
+
+        <ng-container *ngIf="state === EState.PLAYING">
+          <ion-button *ngIf="remainingSkips > 0" class="h-full" color="warning" expand="block" size="large"
+            (click)="onSkip()">
+            <ion-icon class="mr-3" slot="icon-only" name="play-forward-outline"></ion-icon>Skip
+          </ion-button>
+          <ion-button class="h-full" expand="block" size="large" (click)="onStop()">
+            <ion-icon class="mr-3" slot="icon-only" name="stop-outline"></ion-icon>Stop
+          </ion-button>
+        </ng-container>
+
+        <ng-container *ngIf="state === EState.SKIPPED">
+          <ion-button class="h-1/2" expand="block" size="large" (click)="onSetPoints(0)">
+            <ion-icon class="mr-3" slot="icon-only" name="play-outline"></ion-icon>Resume
+          </ion-button>
+        </ng-container>
+
+        <ng-container *ngIf="state === EState.STOPPED">
+          <ion-button *ngIf="remainingTime === 0" class="h-1/2" color="warning" expand="block" size="large"
+            (click)="onSetPoints(0)">
+            <ion-icon class="mr-3" slot="icon-only" name="play-forward-outline"></ion-icon>
+          </ion-button>
+          <div class="w-full h-1/2 flex">
+            <ion-button class="w-full h-full" color="danger" expand="block" size="large" (click)="onSetPoints(-1)">
+              <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+            </ion-button>
+            <ion-button class="w-full h-full" color="success" expand="block" size="large" (click)="onSetPoints(1)">
+              <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
+            </ion-button>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <div *ngIf="state === EState.END" class="h-full">
+      <div class="h-1/4"></div>
+
+      <div class="h-1/2 flex flex-col gap-10 justify-center items-center text-6xl">
+        <div class="flex">
+          <ion-icon class="mr-3" name="bar-chart-outline"></ion-icon>
+          {{points}} pt
+        </div>
+        <div class="flex">
+          <ion-icon class="mr-3" name="timer-outline"></ion-icon>
+          {{time}} s
+        </div>
+      </div>
+
+      <div class="h-1/4 flex flex-col justify-end">
+        <ion-button class="h-1/2" expand="block" size="large" (click)="onStart()">
+          <ion-icon class="mr-3" slot="icon-only" name="refresh-outline"></ion-icon>New game
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

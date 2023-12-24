@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CommonService {
   timerVPosition: 'top' | 'center' | 'bottom' = 'center';
+  showTimer = true;
 
   constructor() {}
 }

@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 export class GamesPage {
   games = [
     {
+      name: 'Combination Lock',
+      icon: 'lock-open-outline',
+      color: 'primary',
+      link: 'combination-lock',
+    },
+    {
       name: 'Roll a die',
       icon: 'dice-outline',
       color: 'success',
@@ -31,18 +37,6 @@ export class GamesPage {
       color: 'alert',
       link: 'tictactoe',
     },
-    /* {
-      name: 'Word shuffle',
-      icon: 'globe-outline',
-      color: 'primary',
-      link: 'words',
-    },
-    {
-      name: 'Word shuffle',
-      icon: 'globe-outline',
-      color: 'primary',
-      link: 'words',
-    }, */
     {
       name: 'More coming...',
       icon: 'code-working-outline',

@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LettersPage } from 'src/app/games/letters/letters.page';
-import { WordsPage } from 'src/app/games/words/words.page';
 import { GamesPage } from './games.page';
 
 const routes: Routes = [
   {
     path: '',
     component: GamesPage,
+  },
+  {
+    path: 'combination-lock',
+    loadChildren: () =>
+      import('../../games/combination-lock/combination-lock.module').then(
+        (m) => m.CombinationLockPageModule
+      ),
   },
   {
     path: 'dice',

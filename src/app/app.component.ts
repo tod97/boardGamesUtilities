@@ -13,6 +13,10 @@ export class AppComponent {
 
   constructor(public commonService: CommonService) {}
 
+  get showTimer() {
+    return this.commonService.showTimer;
+  }
+
   startTimer(seconds) {
     this.endTime = new Date();
     this.endTime.setTime(this.endTime.getTime() + seconds * 1000);

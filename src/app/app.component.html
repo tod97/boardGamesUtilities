@@ -6,8 +6,8 @@
     <ion-button color="warning" shape="round" size="large" (click)="stopTimer()">Interrompi</ion-button>
   </div>
 
-  <ion-fab [hidden]="remainingTime === 0" class="font-bold mb-12" [vertical]="commonService.timerVPosition"
-    horizontal="end" slot="fixed">
+  <ion-fab [hidden]="!showTimer || remainingTime === 0" class="font-bold mb-12"
+    [vertical]="commonService.timerVPosition" horizontal="end" slot="fixed">
     <ion-fab-button color="warning" class="dark-activated">
       <ion-icon *ngIf="!endTime" name="timer"></ion-icon>
       <span class="text-2xl" *ngIf="endTime">{{remainingTime}}</span>
