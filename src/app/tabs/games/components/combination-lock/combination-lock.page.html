@@ -75,7 +75,7 @@
           </ion-button>
         </ng-container>
 
-        <ng-container *ngIf="state === EState.SKIPPED">
+        <ng-container *ngIf="state === EState.PAUSED">
           <ion-button class="h-1/2" expand="block" size="large" (click)="onSetPoints(0)">
             <ion-icon class="mr-3" slot="icon-only" name="play-outline"></ion-icon>
             {{ "COMMON.RESUME" | translate}}

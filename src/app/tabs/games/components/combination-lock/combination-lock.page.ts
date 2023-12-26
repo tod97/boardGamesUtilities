@@ -78,9 +78,8 @@ export class CombinationLockPage implements OnInit, OnDestroy {
   }
 
   onSkip() {
-    this.state = EState.SKIPPED;
     this.remainingSkips--;
-    this.stopTimer();
+    this.pauseGame();
   }
 
   onStop() {
@@ -91,7 +90,11 @@ export class CombinationLockPage implements OnInit, OnDestroy {
   onSetPoints(point: number) {
     this.points = Math.max(0, this.points + point);
     if (this.remainingTime > 0) {
-      this.resumeGame();
+      if (point !== 0) {
+        this.pauseGame();
+      } else {
+        this.resumeGame();
+      }
     } else {
       this.endGame();
     }
@@ -123,6 +126,11 @@ export class CombinationLockPage implements OnInit, OnDestroy {
     await alert.present();
   }
 
+  private pauseGame() {
+    this.state = EState.PAUSED;
+    this.stopTimer();
+  }
+
   private resumeGame() {
     this.state = EState.PLAYING;
     this.onChangeWord();
@@ -151,7 +159,7 @@ export class CombinationLockPage implements OnInit, OnDestroy {
 enum EState {
   INIT = 'INIT',
   PLAYING = 'PLAYING',
-  SKIPPED = 'SKIPPED',
+  PAUSED = 'PAUSED',
   STOPPED = 'STOPPED',
   END = 'END',
 }
