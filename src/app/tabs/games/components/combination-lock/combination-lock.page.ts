@@ -73,7 +73,7 @@ export class CombinationLockPage implements OnInit, OnDestroy {
     this.points = 0;
     this.remainingSkips = 3;
     this.remainingTime = this.time;
-    this.usedWords = [];
+    //this.usedWords = [];
     this.resumeGame();
   }
 
