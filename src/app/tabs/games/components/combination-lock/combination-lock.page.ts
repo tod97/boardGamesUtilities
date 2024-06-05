@@ -11,7 +11,7 @@ import { CommonService } from 'src/app/services/common.service';
 })
 export class CombinationLockPage implements OnInit, OnDestroy {
   lang = 'it';
-  langs = ['it', 'en'];
+  langs = ['it', 'en', 'mec'];
   time = 60;
   times = [60, 90, 120];
   remainingTime: number;
