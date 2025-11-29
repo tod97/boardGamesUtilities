@@ -28,6 +28,21 @@
     "TIC_TAC_TOE": "Tris",
     "WORD_SHUFFLE": "Generatore di parole"
   },
+  "SECRET_SANTA": {
+    "BUDGET_INFO": "Il budget massimo per questo regalo è di <strong>10€</strong>, vediamo se riesci a trovare qualcosa di carino entro questo limite!",
+    "DESCRIPTION": "Seleziona il tuo nome per scoprire a chi dovrai fare il regalo di Natale!",
+    "HOW_IT_WORKS": "Come funziona",
+    "NOTE_LABEL": "Nota",
+    "NOTE_TEXT": "Gli accoppiamenti sono fissi e segreti, ogni persona vedrà solo il proprio destinatario.",
+    "PARTICIPANTS": "Partecipanti",
+    "REMEMBER_SECRET": "Ricorda: è un segreto! 🤫",
+    "REVEAL_RECEIVER": "Scopri il tuo destinatario",
+    "SELECT_YOUR_NAME": "Seleziona il tuo nome",
+    "WHO_ARE_YOU": "Chi sei?",
+    "YOU_WILL_GIVE_GIFT_TO": "dovrai fare il regalo a",
+    "YOUR_NAME": "Il tuo nome",
+    "YOUR_SECRET_SANTA": "Il tuo Secret Santa"
+  },
   "INFO": {
     "DEVELOPED_BY": "Sviluppato da",
     "TITLE": "Informazioni"

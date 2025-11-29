@@ -28,6 +28,21 @@
     "TIC_TAC_TOE": "Tic tac toe",
     "WORD_SHUFFLE": "Word shuffle"
   },
+  "SECRET_SANTA": {
+    "BUDGET_INFO": "The maximum budget for this gift is <strong>€10</strong>, let's see if you can find something nice within this limit!",
+    "DESCRIPTION": "Select your name to discover who you will give a Christmas gift to!",
+    "HOW_IT_WORKS": "How it works",
+    "NOTE_LABEL": "Note",
+    "NOTE_TEXT": "The pairings are fixed and secret, each person will only see their own recipient.",
+    "PARTICIPANTS": "Participants",
+    "REMEMBER_SECRET": "Remember: it's a secret! 🤫",
+    "REVEAL_RECEIVER": "Discover your recipient",
+    "SELECT_YOUR_NAME": "Select your name",
+    "WHO_ARE_YOU": "Who are you?",
+    "YOU_WILL_GIVE_GIFT_TO": "you will give the gift to",
+    "YOUR_NAME": "Your name",
+    "YOUR_SECRET_SANTA": "Your Secret Santa"
+  },
   "INFO": {
     "DEVELOPED_BY": "Developed by",
     "TITLE": "Info"
