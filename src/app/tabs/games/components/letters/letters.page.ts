@@ -16,10 +16,6 @@ export class LettersPage implements OnInit {
     this.onChangeLetter();
   }
 
-  onBackButtonClick() {
-    this.navCtrl.navigateBack('/tabs/games');
-  }
-
   onChangeLetter() {
     const letters = this.avoidUnusualLetters
       ? 'ABCDEFGHILMNOPQRSTUVZ'

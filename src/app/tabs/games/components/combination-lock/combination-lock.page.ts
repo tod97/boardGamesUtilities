@@ -54,10 +54,6 @@ export class CombinationLockPage implements OnInit, OnDestroy {
     this.commonService.showTimer = true;
   }
 
-  onBackButtonClick() {
-    this.navCtrl.navigateBack('/tabs/games');
-  }
-
   onChangeWord() {
     this.word =
       this.dictionaries[this.lang][

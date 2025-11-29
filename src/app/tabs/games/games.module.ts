@@ -11,6 +11,7 @@ import { DicePage } from './components/dice/dice.page';
 import { LettersPage } from './components/letters/letters.page';
 import { TicTacToePage } from './components/tictactoe/tictactoe.page';
 import { WordsPage } from './components/words/words.page';
+import { SecretSantaPage } from './components/secretsanta/secretsanta.page';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { WordsPage } from './components/words/words.page';
     LettersPage,
     TicTacToePage,
     WordsPage,
+    SecretSantaPage,
   ],
 })
 export class GamesPageModule {}

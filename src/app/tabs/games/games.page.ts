@@ -39,6 +39,12 @@ export class GamesPage {
       link: 'tictactoe',
     },
     {
+      name: this.translate.instant('GAMES.SECRET_SANTA'),
+      icon: 'gift-outline',
+      color: 'danger',
+      link: 'secretsanta',
+    },
+    {
       name: this.translate.instant('GAMES.MORE_COMING_SOON'),
       icon: 'code-working-outline',
     },

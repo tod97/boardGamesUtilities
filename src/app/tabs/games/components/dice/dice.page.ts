@@ -16,10 +16,6 @@ export class DicePage implements OnInit {
     this.onChangeNumber();
   }
 
-  onBackButtonClick() {
-    this.navCtrl.navigateBack('/tabs/games');
-  }
-
   onChangeNumber() {
     if (this.faces < 1 || isNaN(this.faces)) {
       this.faces = 6;

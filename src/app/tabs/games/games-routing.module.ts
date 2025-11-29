@@ -6,6 +6,7 @@ import { DicePage } from 'src/app/tabs/games/components/dice/dice.page';
 import { LettersPage } from 'src/app/tabs/games/components/letters/letters.page';
 import { TicTacToePage } from 'src/app/tabs/games/components/tictactoe/tictactoe.page';
 import { WordsPage } from 'src/app/tabs/games/components/words/words.page';
+import { SecretSantaPage } from 'src/app/tabs/games/components/secretsanta/secretsanta.page';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'words',
     component: WordsPage,
+  },
+  {
+    path: 'secretsanta',
+    component: SecretSantaPage,
   },
 ];
 

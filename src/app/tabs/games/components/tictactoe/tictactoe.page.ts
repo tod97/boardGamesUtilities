@@ -26,10 +26,6 @@ export class TicTacToePage implements OnInit, OnDestroy {
     this.commonService.timerVPosition = 'center';
   }
 
-  onBackButtonClick() {
-    this.navCtrl.navigateBack('/tabs/games');
-  }
-
   onCellSelected(cell: number) {
     if (!this.xs.includes(cell) && !this.os.includes(cell) && !this.winner) {
       if (this.xTurn) {

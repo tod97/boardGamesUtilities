@@ -1,9 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="onBackButtonClick()">
-        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
-      </ion-button>
+      <ion-back-button [defaultHref]="'/tabs/games'"></ion-back-button>
     </ion-buttons>
     <ion-title>{{ "GAMES.TIC_TAC_TOE" | translate}}</ion-title>
   </ion-toolbar>
@@ -27,7 +25,9 @@
         </span>
         <span *ngIf="winner === 'd'">DRAW</span>
       </p>
-      <ion-button expand="block" size="large" (click)="onNewGame()">
+      <ion-button expand="block"
+        size="large"
+        (click)="onNewGame()">
         {{ "GAMES.NEW_GAME" | translate}}
       </ion-button>
     </div>
@@ -35,7 +35,9 @@
 </ion-content>
 
 
-<ng-template #row let-mult="mult" let-bottomBorder="bottomBorder">
+<ng-template #row
+  let-mult="mult"
+  let-bottomBorder="bottomBorder">
   <div class="w-full h-1/3 flex">
     <ng-container *ngTemplateOutlet="cell;context:{number: 1 + 3 * mult, extraClass: bottomBorder + ' border-r-2'}">
     </ng-container>
@@ -46,9 +48,14 @@
   </div>
 </ng-template>
 
-<ng-template #cell let-number="number" let-extraClass="extraClass">
-  <div class="w-1/3 flex justify-center items-center text-8xl {{extraClass}}" (click)="onCellSelected(number)">
-    <ion-icon *ngIf="xs.includes(number)" name="close-outline"></ion-icon>
-    <ion-icon *ngIf="os.includes(number)" name="ellipse-outline"></ion-icon>
+<ng-template #cell
+  let-number="number"
+  let-extraClass="extraClass">
+  <div class="w-1/3 flex justify-center items-center text-8xl {{extraClass}}"
+    (click)="onCellSelected(number)">
+    <ion-icon *ngIf="xs.includes(number)"
+      name="close-outline"></ion-icon>
+    <ion-icon *ngIf="os.includes(number)"
+      name="ellipse-outline"></ion-icon>
   </div>
 </ng-template>

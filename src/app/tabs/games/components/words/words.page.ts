@@ -32,10 +32,6 @@ export class WordsPage implements OnInit {
     });
   }
 
-  onBackButtonClick() {
-    this.navCtrl.navigateBack('/tabs/games');
-  }
-
   onChangeWord() {
     this.word =
       this.dictionaries[this.lang][
